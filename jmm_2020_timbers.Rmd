@@ -228,7 +228,8 @@ class: middle
 
 ## Textbook/readings
 
-No modern yet accessible textbooks available that are suitable for our target learners... at least that I am aware of...
+No modern yet accessible textbooks available that are suitable for our list of topics,
+programming language, and target learners... at least that I am aware of...
 
 --
 
