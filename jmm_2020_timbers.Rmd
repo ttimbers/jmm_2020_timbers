@@ -15,6 +15,9 @@ output:
 
 ```{r setup, include=FALSE}
 library(knitr)
+library(lubridate)
+library(scales)
+library(tidyverse)
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
@@ -30,12 +33,44 @@ include_graphics("img/dsci-100-logo.png")
 
 *Use of data science tools to summarize, visualize, and analyze data. Sensible workflows and clear interpretations are emphasized.*
 
+Prerequisites: Grade 12 Math
+
+Syllabus: [https://ubc-dsci.github.io/dsci-100/README.html](https://ubc-dsci.github.io/dsci-100/README.html)
+
 ---
+
+class: middle
+
+## Course history
+
+- Started Development in 2017 by the UBC Department of Statistics
+
+- Course enrollment currently limited by seats offered
+
+
+```{r enrollments, fig.width = 5, fig.height = 4, fig.retina = 2}
+enrollments <- tibble(year = c(2018L, 2019L, 2020L),
+                      students = c(59L, 241L, 601L))
+
+ggplot(enrollments, aes(x = year, y = students)) +
+  geom_line() +
+  geom_point() +
+  scale_x_continuous(breaks = c(2018, 2019, 2020),
+                     labels = function(x) paste0(round(as.numeric(x)))) +
+  xlab("Year") +
+  ylab("Number of students enrolled") +
+  ylim(c(0, 700)) +
+  theme_bw() +
+  theme(text = element_text(size = 16)) 
+```
+
+---
+
 class: center, middle
 
 ## Adopted definition of data science
 
-The process of obtain value (*i.e.*, insight) from data through reproducible and transparent processes.
+The process of obtaining value (*i.e.*, insight) from data through reproducible and transparent methods.
 
 <!--- this definition drives how we choose content for this course - content is 
 focused on both how to ask and answer statistical questions using appropriate
@@ -45,17 +80,23 @@ done, and use your methods with the same data to obtain the same results -->
 
 ---
 
+class: center
+
 ## Course structure
 
 --
 
-* First third focuses on how to use the R programming language to load, 
+First third focuses on how to use the R programming language to load, 
 wrangle/clean, and visualize data, while answering descriptive and 
 exploratory data analysis questions. 
 
+```{r tidyverse, out.width="60%"}
+include_graphics("img/tidyverse.png")
+```
+
 --
 
-* The remaining two thirds of the course illustrate how to solve four common 
+The remaining two thirds of the course illustrate how to solve four common 
 problems in data science, which are useful for answering predictive and 
 inferential data analysis questions.
 
@@ -193,20 +234,10 @@ No modern yet accessible textbooks available that are suitable for our target le
 
 ... so we wrote our own using the `bookdown` R package!
 
-.pull-left[
-<img src="https://bookdown.org/yihui/bookdown/images/logo.png" width="150">
-]
-
-.pull-right[
+<img src="img/textbook.png" width="600">
 
 
-**Data Science: A First Introduction**
-
-by Tiffany Timbers, Trevor Campbell & Melissa Lee
-
-https://ubc-dsci.github.io/introduction-to-datascience/
-]
-
+- URL: [https://ubc-dsci.github.io/introduction-to-datascience](https://ubc-dsci.github.io/introduction-to-datascience)
 - [open source](https://github.com/UBC-DSCI/introduction-to-datascience) and licensed [Attribution-NonCommercial-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 - *To be published in print by CRC Press at some point in 2021*
 
