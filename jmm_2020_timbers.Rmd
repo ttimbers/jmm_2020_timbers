@@ -369,6 +369,8 @@ class: center, middle
 include_graphics("img/dsci-100-logo.png")
 ```
 
-Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+### Resources:
 
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](https://yihui.org/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+- Syllabus: [https://ubc-dsci.github.io/dsci-100/README.html](https://ubc-dsci.github.io/dsci-100/README.html)
+- Textbook: [https://ubc-dsci.github.io/introduction-to-datascience/](https://ubc-dsci.github.io/introduction-to-datascience/)
+- Past course work: [https://github.com/UBC-DSCI/dsci-100-assets](https://github.com/UBC-DSCI/dsci-100-assets)
